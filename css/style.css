@@ -1,0 +1,141 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Resets */ 
+
+* {
+  box-sizing: border-box;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body, h1, h2, h3, p, ul {
+  margin: 0;
+} 
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input, button {
+  border: none;
+}
+
+/* ==================
+   Typography
+===================== */
+
+/* Colours */ 
+
+:root {
+  --bright-red: hsl(12, 88%, 59%);
+  --dark-blue: hsl(228, 39%, 23%);
+
+  --dark-grayish-blue: hsl(227, 12%, 61%);
+  --very-dark-blue: hsl(233, 12%, 13%);
+  --very-pale-red: hsl(13, 100%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+body, .cta-secondary, #email {
+  background: var(--very-light-gray);
+}
+
+.cta-primary, .card-number, .banner, .submit-btn {
+  background: var(--bright-red);
+}
+
+.slide {
+  background: var(--very-pale-red); 
+}
+
+footer {
+  background: var(--very-dark-blue);
+}
+
+.hero-title, .banner-title, .info-title, .testimonials-title, .card-title, .header-nav .nav-link {
+  color: var(--dark-blue);
+}
+
+footer, .cta-primary, .banner-title, .card-number, .submit-btn {
+  color: var(--very-light-gray);
+}
+
+.hero-body, .info-body, .card-body {
+  color: var(--dark-grayish-blue);
+}
+
+.cta-secondary {
+  color: var(--bright-red);
+}
+
+.copyright {
+  color: var(--very-pale-red);
+  opacity: 0.4;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--dark-grayish-blue);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--dark-grayish-blue);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--dark-grayish-blue);
+}
+
+.footer-logo > g > path {
+  fill: white;
+}
+
+/* Active States */ 
+
+/* General */
+
+.header-nav .nav-link {
+  font-weight: 700;
+}
+
+@media (min-width: 600px) {
+  .header-nav .nav-link {
+    font-weight: 500;
+  }
+}
+
+/* ==================
+   Layout
+===================== */
+
+/* Global */ 
+
+/* Header */ 
+
+/* Nav */ 
+
+/* Main */ 
+
+/* Hero */ 
+
+/* Info */ 
+
+/* Cards */ 
+
+/* Testimonials */ 
+
+/* Banner */ 
+
+/* Footer */ 
+
+
+
+
+/* Absolute positioning on header */ 
