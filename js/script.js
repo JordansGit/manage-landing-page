@@ -58,7 +58,42 @@ const checkEmail = () => {
   return valid; // return true if email is provided and it's valid, show error msg if it returns false. 
 }
 
+
 // Image Slideshow 
+let slideIndex = 1;
+showSlides(slideIndex); // run showSlides function on page load with n as 1st image. 
+
+function currentSlide(n) {
+  showSlides(slideIndex = n); // get n from html onclick, then run the showSlides function with n of the particular image. 
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll('.slide');
+  let dots = document.querySelectorAll('.dot');
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.add('hide');
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove('active');
+  }
+
+  slides[slideIndex-1].classList.remove('hide');
+  dots[slideIndex-1].classList.add('active');
+}
+
+/*
+To do: 
+  rewrite the above function as an event listener instead of onclick();
+  do something for the desktop image slider. 
+*/ 
+
+
+
+
+/* old w3 schools function for image slider 
+
 let slideIndex = 1;
 showSlides(slideIndex); // run showSlides function with n as 1st image. 
 
@@ -71,9 +106,6 @@ function showSlides(n) {
   let slides = document.getElementsByClassName("slide");
   let dots = document.getElementsByClassName("dot");
 
-  if (n > slides.length) {slideIndex = 1} // if current slide = the last slide, then when you click next btn, it will go back to 1st slide... this doesn't do anything for me as I've removed prev and next buttons. 
-  if (n < 1) {slideIndex = slides.length} // same as above but in reverse, clicking prev btn on slide 1 = go to slide 4. 
-
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  // make all .slide class have a display: none;
   }
@@ -83,3 +115,5 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  // only make the currently selected .slide have display: block;
   dots[slideIndex-1].className += " active"; // only make the currently selected dot have an .active class. 
 }
+
+*/ 
