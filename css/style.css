@@ -133,22 +133,27 @@ p {
   font-weight: 700;
 }
 
-.header-nav .nav-link {
-  font-weight: 700;
-}
-
 @media (min-width: 600px) {
   body {
     text-align: left;
   }
-
-  .header-nav .nav-link {
-    font-weight: 500;
-    font-size: 0.8rem;
+  .header-nav .nav-item {
+    text-align: center;
   }
 
   .testimonials {
     text-align: center;
+  }
+}
+
+.header-nav .nav-link {
+  font-weight: 700;
+}
+
+@media (min-width: 880px) {
+  .header-nav .nav-link {
+    font-weight: 500;
+    font-size: 0.8rem;
   }
 }
 
