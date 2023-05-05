@@ -50,8 +50,12 @@ body, .cta-secondary, #email {
   background: var(--very-light-gray);
 }
 
-.cta-primary, .card-number, .banner, .submit-btn {
+.cta-primary, .card-number, .submit-btn {
   background: var(--bright-red);
+}
+
+.banner {
+  background-color: var(--bright-red); 
 }
 
 .card-title {
@@ -379,12 +383,34 @@ header {
 /* Main */ 
 
 main {
-  margin-top: 106px;
+  padding-top: 106px;
+
+  background-image: url(../images/bg-tablet-pattern.svg), url(../images/bg-tablet-pattern.svg);
+  background-position: -85% -4%, 315% 16%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 120%, 80%;
 }
 
 @media (min-width: 600px) {
   main {
-    margin-top: 210px;
+    padding-top: 210px;
+
+    background-position: 175% -2%, -200% 50%;
+    background-size: 72%, 80%;
+  }
+}
+
+@media (min-width: 800px) {
+  main {
+    background-position: 175% -6%, -200% 50%;
+    background-size: 72%, 80%;
+  }
+}
+
+@media (min-width: 1150px) {
+  main {
+    background-position: 123% -7%, -480px 53%;
+    background-size: initial;
   }
 }
 
@@ -592,20 +618,46 @@ main {
 
 .banner {
   padding: 5.5em 0;
+  background-image: url(../images/bg-simplify-section-mobile.svg); 
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: left center; /* Center the image */
+  position: relative;
 }
+
+@media (min-width: 600px) {
+  .banner {
+    padding: 4em 0;
+    background-image: unset; 
+    overflow: hidden;
+  }
+  
+  .banner:after {
+    content: url(../images/bg-simplify-section-desktop.svg);
+    position: absolute;
+    top: -134px;
+    bottom: 0;
+    right: -235px;
+  }
+}
+
+@media (min-width: 1450px) {
+  .banner:after {
+    right: unset;
+    left: 50%;
+    transform: translateX(-34%);
+  }
+}
+
 .banner .container {
   align-items: center;
 }
 
 .banner-title {
   margin-bottom: 0.7em;
-  margin-right: 1em;
+  /*margin-right: 1em;*/
 }
 
 @media (min-width: 600px) {
-  .banner {
-    padding: 4em 0;
-  }
   .banner-title {
     margin-bottom: 0;
     max-width: 450px;
@@ -638,10 +690,11 @@ main {
   justify-content: space-between;
   padding: 1.5em 1em 3em 1em;
   max-width: 420px;
+  align-items: center;
 }
 
 .social-icon {
-  width: 35px;
+  scale: 1.75;
 }
 
 @media (min-width: 800px) {
@@ -652,8 +705,7 @@ main {
 
   }
   .social-icon {
-    width: 20px;
-    max-width: 20px;
+    scale: 1;
   }
 }
 
@@ -679,7 +731,7 @@ main {
   order: 0;
   margin: 3rem 0;
   position: relative;
-  width: 306px;
+  width: max-content; 
 }
 
 .form-error-msg {
@@ -772,8 +824,6 @@ main {
 }
 /* 
 To do: 
-  Absolute positioning on header 
-
   mobile-nav: 
     open-nav-body
     open-nav-nav
@@ -786,7 +836,6 @@ To do:
     active states 
 
   to do: 
-    bg designs 
     js
 
   for next project, need to add padding to .nav-link so I don't have to be right on top of the text in order for hover effects to work. 
