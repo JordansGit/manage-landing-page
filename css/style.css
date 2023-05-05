@@ -159,13 +159,12 @@ p {
 
 .hero-title, .banner-title {
   font-size: 2.4rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 @media (min-width: 600px) {
   .hero-title {
     font-size: clamp(2rem, 0.8rem + 3.2vw, 3.2rem);
-    font-weight: 700;
   }
 }
 
@@ -250,14 +249,6 @@ footer .nav-link:hover {
   opacity: 0.3;
 }
 
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
-}
-
 /* ==================
    Layout
 ===================== */
@@ -286,6 +277,14 @@ footer .nav-link:hover {
   position: relative;
 }
 
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
 /* Header */
 
 header {
@@ -308,7 +307,7 @@ header {
 }
 
 .header-nav {
-  display: none;
+  /*display: none;*/
 }
 
 .cta-header {
@@ -337,17 +336,33 @@ header {
   }
 }
 
+@media (min-width: 600px) {
+  .header {
+    padding-top: 3.5em;
+  }
+  .header-logo {
+    width: initial;
+  }
+}
+
 /* Nav */ 
+
+.mobile-menu, .nav-close-btn {
+  z-index: 3;
+}
 
 .nav-list {
   display: flex;
 }
 
 .header-nav {
-  position: absolute;
+  position: fixed;
   background: white;
   top: 106px;
   width: 84vw;
+  transform: translateY(-140%);
+  transition: transform 250ms;
+  z-index: 2;
 }
 
 .header-nav .nav-list {
@@ -359,20 +374,17 @@ header {
   margin: 1em 0;
 }
 
-@media (min-width: 600px) {
-  .header {
-    padding-top: 3.5em;
-  }
-  .header-logo {
-    width: initial;
+@media (min-width: 879px) {
+  .header-nav {
+    transition: transform 0ms;
   }
 }
-
 @media (min-width: 880px) {
   .header-nav {
     position: initial;
     background: initial;
     width: initial;
+    transform: translateY(0%);
   }
   
   .header-nav .nav-list {
@@ -383,6 +395,25 @@ header {
   .header-nav .nav-item {
     margin: initial;
   }
+}
+
+.nav-open-nav {
+  transform: translateY(0%);
+}
+
+.nav-open-body {
+  overflow: hidden;
+}
+
+.nav-open-body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(20, 20, 20, 0.0), rgba(20, 20, 20, 0.75));
+  z-index: 1;
 }
 
 /* Main */ 
@@ -743,6 +774,7 @@ main {
   margin-left: 2em;
   position: absolute;
   top: 55px;
+  display: none;
 }
 
 #email, .submit-btn {
@@ -827,21 +859,26 @@ main {
     margin: 0;
   }  
 }
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 /* 
 To do: 
-  mobile-nav: 
-    open-nav-body
-    open-nav-nav
-    header-nav: box-shadow;
-
-
   Done today: 
-    mobile nav 
-    layout and typography for all screen sizes. 
-    active states 
+    js fot mobile nav 
+    js for form validation 
 
   to do: 
-    js
+    js for image slider 
 
   for next project, need to add padding to .nav-link so I don't have to be right on top of the text in order for hover effects to work. 
 */ 
