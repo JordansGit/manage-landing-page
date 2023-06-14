@@ -73,10 +73,10 @@ function showSlides(n) {
   let dots = document.querySelectorAll('.dot');
 
   for (i = 0; i < slides.length; i++) {
-    slides[i].classList.add('hide');
+    slides[i].classList.add('hide'); // display: none to all slides. 
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].classList.remove('active');
+    dots[i].classList.remove('active'); // remove .active from all dots. 
   }
 
   slides[slideIndex-1].classList.remove('hide');
